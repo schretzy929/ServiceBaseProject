@@ -1,0 +1,13 @@
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\bin\ServiceBase.dll.config
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\bin\ServiceBase.dll
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\bin\ServiceBase.pdb
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\bin\EntityFramework.dll
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\bin\EntityFramework.SqlServer.dll
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\bin\EntityFramework.xml
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\bin\EntityFramework.SqlServer.xml
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\obj\Debug\ServiceBase.csprojResolveAssemblyReference.cache
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\obj\Debug\ServiceBase.dll
+c:\users\schretzenmaiers\documents\visual studio 2013\Projects\ServiceBaseProject\ServiceBase\obj\Debug\ServiceBase.pdb
+C:\Users\schretzenmaiers\Documents\Visual Studio 2013\Projects\ServiceBaseProject\ServiceBase\obj\Debug\ServiceBase.csproj.ResolveComReference.cache
+C:\Users\schretzenmaiers\Documents\Visual Studio 2013\Projects\ServiceBaseProject\ServiceBase\bin\Newtonsoft.Json.dll
+C:\Users\schretzenmaiers\Documents\Visual Studio 2013\Projects\ServiceBaseProject\ServiceBase\bin\Newtonsoft.Json.xml

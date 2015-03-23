@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d233e26eebfa4ad283137b1d9a723096" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="HelpDesk_Model.Abbreviation" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDesk_Model.DocumentAccess" Width="1.5" PointX="10.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDesk_Model.DocumentStatu" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDesk_Model.EmailTemplate" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDesk_Model.LearningCenterCategory" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDesk_Model.NetworkLogin" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDesk_Model.PhoneNumber" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDesk_Model.Printer" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDesk_Model.sysdiagram" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDesk_Model.ProblemCondition" Width="1.5" PointX="13.375" PointY="18.25" />
+        <EntityTypeShape EntityType="HelpDesk_Model.ProblemImpact" Width="1.5" PointX="13.375" PointY="16" />
+        <EntityTypeShape EntityType="HelpDesk_Model.ProblemStatu" Width="1.5" PointX="13.375" PointY="13.125" />
+        <EntityTypeShape EntityType="HelpDesk_Model.ProblemTracker" Width="1.5" PointX="15.625" PointY="14" />
+        <AssociationConnector Association="HelpDesk_Model.FK_ProblemTracker_ProblemCondition" />
+        <AssociationConnector Association="HelpDesk_Model.FK_ProblemTracker_ProblemImpact" />
+        <AssociationConnector Association="HelpDesk_Model.FK_ProblemTracker_ProblemStatus" />
+        <AssociationConnector Association="HelpDesk_Model.FK_ProblemTracker_ProblemTracker" />
+        <EntityTypeShape EntityType="HelpDesk_Model.InfoGathLog" Width="1.5" PointX="8.25" PointY="11.375" />
+        <EntityTypeShape EntityType="HelpDesk_Model.ProbTrackLog" Width="1.5" PointX="17.875" PointY="13" />
+        <EntityTypeShape EntityType="HelpDesk_Model.SDDocLog" Width="1.5" PointX="8.25" PointY="5.375" />
+        <EntityTypeShape EntityType="HelpDesk_Model.UsageLog" Width="1.5" PointX="8.25" PointY="17.125" />
+        <AssociationConnector Association="HelpDesk_Model.FK_InfoGathLog_networkLogin" />
+        <AssociationConnector Association="HelpDesk_Model.FK_ProbTrackLog_networkLogin" />
+        <AssociationConnector Association="HelpDesk_Model.FK_SDDocLog_networkLogin" />
+        <AssociationConnector Association="HelpDesk_Model.FK_UsageLog_networkLogin" />
+        <AssociationConnector Association="HelpDesk_Model.FK_ProbTrackLog_ProblemTracker" />
+        <EntityTypeShape EntityType="HelpDesk_Model.DocumentLink" Width="1.5" PointX="3.75" PointY="16.375" />
+        <EntityTypeShape EntityType="HelpDesk_Model.HelpfulHyperlink" Width="1.5" PointX="8.375" PointY="8.75" />
+        <EntityTypeShape EntityType="HelpDesk_Model.InfoGathering" Width="1.5" PointX="3" PointY="4.25" />
+        <EntityTypeShape EntityType="HelpDesk_Model.SDDocumentation" Width="1.5" PointX="6" PointY="2.625" />
+        <AssociationConnector Association="HelpDesk_Model.FK_DocumentLinks_DocumentAccess" />
+        <AssociationConnector Association="HelpDesk_Model.FK_InfoGathering_DocumentLinks" />
+        <AssociationConnector Association="HelpDesk_Model.FK_InfoGathering_DocumentLinks1" />
+        <AssociationConnector Association="HelpDesk_Model.FK_SDDocumentation_DocumentLinks" />
+        <AssociationConnector Association="HelpDesk_Model.FK_SDDocumentation_DocumentLinks1" />
+        <AssociationConnector Association="HelpDesk_Model.FK_InfoGathering_Status" />
+        <AssociationConnector Association="HelpDesk_Model.FK_SDDocumentation_Status" />
+        <AssociationConnector Association="HelpDesk_Model.FK_InfoGathering_InfoGathering" />
+        <AssociationConnector Association="HelpDesk_Model.FK_SDDocumentation_LearningCenterCategory" />
+        <AssociationConnector Association="HelpDesk_Model.FK_SDDocumentation_SDDocumentation" />
+        <AssociationConnector Association="HelpDesk_Model.FK_InfoGathLog_InfoGathering" />
+        <AssociationConnector Association="HelpDesk_Model.FK_SDDocLog_SDDocumentation" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

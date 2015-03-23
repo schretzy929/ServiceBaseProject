@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HelpDesk_ModelStoreContainer" CdmEntityContainer="HelpDesk_DB">
+    <EntitySetMapping Name="Abbreviations">
+      <EntityTypeMapping TypeName="HelpDesk_Model.Abbreviation">
+        <MappingFragment StoreEntitySet="Abbreviations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="abbreviation1" ColumnName="abbreviation" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentAccesses">
+      <EntityTypeMapping TypeName="HelpDesk_Model.DocumentAccess">
+        <MappingFragment StoreEntitySet="DocumentAccess">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="access" ColumnName="access" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentStatus">
+      <EntityTypeMapping TypeName="HelpDesk_Model.DocumentStatu">
+        <MappingFragment StoreEntitySet="DocumentStatus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailTemplates">
+      <EntityTypeMapping TypeName="HelpDesk_Model.EmailTemplate">
+        <MappingFragment StoreEntitySet="EmailTemplates">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="template" ColumnName="template" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LearningCenterCategories">
+      <EntityTypeMapping TypeName="HelpDesk_Model.LearningCenterCategory">
+        <MappingFragment StoreEntitySet="LearningCenterCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetworkLogins">
+      <EntityTypeMapping TypeName="HelpDesk_Model.NetworkLogin">
+        <MappingFragment StoreEntitySet="NetworkLogin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ntID" ColumnName="ntID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhoneNumbers">
+      <EntityTypeMapping TypeName="HelpDesk_Model.PhoneNumber">
+        <MappingFragment StoreEntitySet="PhoneNumbers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="details" ColumnName="details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Printers">
+      <EntityTypeMapping TypeName="HelpDesk_Model.Printer">
+        <MappingFragment StoreEntitySet="Printers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ipAddress" ColumnName="ipAddress" />
+          <ScalarProperty Name="serialNumber" ColumnName="serialNumber" />
+          <ScalarProperty Name="manufacturer" ColumnName="manufacturer" />
+          <ScalarProperty Name="modelNumber" ColumnName="modelNumber" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="supportGroup" ColumnName="supportGroup" />
+          <ScalarProperty Name="lastHardwareScan" ColumnName="lastHardwareScan" />
+          <ScalarProperty Name="ciDescription" ColumnName="ciDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HelpDesk_Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HelpDesk_Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HelpDesk_Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HelpDesk_Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HelpDesk_Model.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HelpDesk_Model.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HelpDesk_Model.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HelpDesk_Model.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HelpDesk_Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HelpDesk_Model.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="ProblemConditions">
+      <EntityTypeMapping TypeName="HelpDesk_Model.ProblemCondition">
+        <MappingFragment StoreEntitySet="ProblemCondition">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProblemImpacts">
+      <EntityTypeMapping TypeName="HelpDesk_Model.ProblemImpact">
+        <MappingFragment StoreEntitySet="ProblemImpact">
+          <ScalarProperty Name="impactLevel" ColumnName="impactLevel" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProblemStatus">
+      <EntityTypeMapping TypeName="HelpDesk_Model.ProblemStatu">
+        <MappingFragment StoreEntitySet="ProblemStatus">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProblemTrackers">
+      <EntityTypeMapping TypeName="HelpDesk_Model.ProblemTracker">
+        <MappingFragment StoreEntitySet="ProblemTracker">
+          <ScalarProperty Name="Original_id" ColumnName="Original_id" />
+          <ScalarProperty Name="ProblemStatus_id" ColumnName="ProblemStatus_id" />
+          <ScalarProperty Name="actualImpact_id" ColumnName="actualImpact_id" />
+          <ScalarProperty Name="plannedImpact_id" ColumnName="plannedImpact_id" />
+          <ScalarProperty Name="plannedStartDateTime" ColumnName="plannedStartDateTime" />
+          <ScalarProperty Name="reportedBy" ColumnName="reportedBy" />
+          <ScalarProperty Name="plannedEndDateTime" ColumnName="plannedEndDateTime" />
+          <ScalarProperty Name="ProblemCondition_id" ColumnName="ProblemCondition_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="endDateTime" ColumnName="endDateTime" />
+          <ScalarProperty Name="startDateTime" ColumnName="startDateTime" />
+          <ScalarProperty Name="leadTicket" ColumnName="leadTicket" />
+          <ScalarProperty Name="affectedService" ColumnName="affectedService" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InfoGathLogs">
+      <EntityTypeMapping TypeName="HelpDesk_Model.InfoGathLog">
+        <MappingFragment StoreEntitySet="InfoGathLog">
+          <ScalarProperty Name="InfoGathering_id" ColumnName="InfoGathering_id" />
+          <ScalarProperty Name="NTID_id" ColumnName="NTID_id" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProbTrackLogs">
+      <EntityTypeMapping TypeName="HelpDesk_Model.ProbTrackLog">
+        <MappingFragment StoreEntitySet="ProbTrackLog">
+          <ScalarProperty Name="Problemtracker_id" ColumnName="Problemtracker_id" />
+          <ScalarProperty Name="NTID_id" ColumnName="NTID_id" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SDDocLogs">
+      <EntityTypeMapping TypeName="HelpDesk_Model.SDDocLog">
+        <MappingFragment StoreEntitySet="SDDocLog">
+          <ScalarProperty Name="SDDocumentation_id" ColumnName="SDDocumentation_id" />
+          <ScalarProperty Name="NTID_id" ColumnName="NTID_id" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsageLogs">
+      <EntityTypeMapping TypeName="HelpDesk_Model.UsageLog">
+        <MappingFragment StoreEntitySet="UsageLog">
+          <ScalarProperty Name="NTID_id" ColumnName="NTID_id" />
+          <ScalarProperty Name="searchDateTime" ColumnName="searchDateTime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentLinks">
+      <EntityTypeMapping TypeName="HelpDesk_Model.DocumentLink">
+        <MappingFragment StoreEntitySet="DocumentLinks">
+          <ScalarProperty Name="Access_id" ColumnName="Access_id" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HelpfulHyperlinks">
+      <EntityTypeMapping TypeName="HelpDesk_Model.HelpfulHyperlink">
+        <MappingFragment StoreEntitySet="HelpfulHyperlink">
+          <ScalarProperty Name="hyperlink" ColumnName="hyperlink" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InfoGatherings">
+      <EntityTypeMapping TypeName="HelpDesk_Model.InfoGathering">
+        <MappingFragment StoreEntitySet="InfoGathering">
+          <ScalarProperty Name="Original_id" ColumnName="Original_id" />
+          <ScalarProperty Name="Status_id" ColumnName="Status_id" />
+          <ScalarProperty Name="aliases" ColumnName="aliases" />
+          <ScalarProperty Name="PasswordHyperlink_id" ColumnName="PasswordHyperlink_id" />
+          <ScalarProperty Name="passwordTitle" ColumnName="passwordTitle" />
+          <ScalarProperty Name="passwordAttributes" ColumnName="passwordAttributes" />
+          <ScalarProperty Name="contactInfo" ColumnName="contactInfo" />
+          <ScalarProperty Name="supportHours" ColumnName="supportHours" />
+          <ScalarProperty Name="supportInfo" ColumnName="supportInfo" />
+          <ScalarProperty Name="assignmentGroup" ColumnName="assignmentGroup" />
+          <ScalarProperty Name="infoGathTitle" ColumnName="infoGathTitle" />
+          <ScalarProperty Name="infoGathLink_id" ColumnName="infoGathLink_id" />
+          <ScalarProperty Name="searchableAlias" ColumnName="searchableAlias" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SDDocumentations">
+      <EntityTypeMapping TypeName="HelpDesk_Model.SDDocumentation">
+        <MappingFragment StoreEntitySet="SDDocumentation">
+          <ScalarProperty Name="learningCenterOrder" ColumnName="learningCenterOrder" />
+          <ScalarProperty Name="passwordTitle" ColumnName="passwordTitle" />
+          <ScalarProperty Name="documentTitle" ColumnName="documentTitle" />
+          <ScalarProperty Name="Original_id" ColumnName="Original_id" />
+          <ScalarProperty Name="LearningCenterCategory_id" ColumnName="LearningCenterCategory_id" />
+          <ScalarProperty Name="Status_id" ColumnName="Status_id" />
+          <ScalarProperty Name="PasswordHyperlink_id" ColumnName="PasswordHyperlink_id" />
+          <ScalarProperty Name="DocumentLink_id" ColumnName="DocumentLink_id" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

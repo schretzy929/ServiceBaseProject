@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpDesk_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Abbreviations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="abbreviation" Type="varchar" MaxLength="50" />
+    <Property Name="location" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DocumentAccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="access" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DocumentLinks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="link" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Access_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailTemplates">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="template" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="HelpfulHyperlink">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="hyperlink" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InfoGathering">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="searchableAlias" Type="varchar" MaxLength="510" Nullable="false" />
+    <Property Name="infoGathLink_id" Type="int" />
+    <Property Name="infoGathTitle" Type="varchar" MaxLength="255" />
+    <Property Name="assignmentGroup" Type="varchar" MaxLength="255" />
+    <Property Name="supportInfo" Type="varchar" MaxLength="510" />
+    <Property Name="supportHours" Type="varchar" MaxLength="255" />
+    <Property Name="contactInfo" Type="varchar" MaxLength="510" />
+    <Property Name="passwordAttributes" Type="varchar" MaxLength="510" />
+    <Property Name="passwordTitle" Type="varchar" MaxLength="510" />
+    <Property Name="PasswordHyperlink_id" Type="int" />
+    <Property Name="aliases" Type="varchar" MaxLength="510" />
+    <Property Name="Status_id" Type="int" Nullable="false" />
+    <Property Name="Original_id" Type="int" />
+  </EntityType>
+  <EntityType Name="InfoGathLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateTime" Type="datetime" Nullable="false" />
+    <Property Name="NTID_id" Type="int" Nullable="false" />
+    <Property Name="InfoGathering_id" Type="int" />
+  </EntityType>
+  <EntityType Name="LearningCenterCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NetworkLogin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ntID" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="255" />
+    <Property Name="lastName" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhoneNumbers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="50" />
+    <Property Name="number" Type="varchar" MaxLength="50" />
+    <Property Name="details" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Printers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ipAddress" Type="varchar" MaxLength="100" />
+    <Property Name="serialNumber" Type="varchar" MaxLength="100" />
+    <Property Name="manufacturer" Type="varchar" MaxLength="255" />
+    <Property Name="modelNumber" Type="varchar" MaxLength="255" />
+    <Property Name="location" Type="varchar" MaxLength="255" />
+    <Property Name="supportGroup" Type="varchar" MaxLength="255" />
+    <Property Name="lastHardwareScan" Type="varchar" MaxLength="255" />
+    <Property Name="ciDescription" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ProblemCondition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProblemImpact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="impactLevel" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProblemStatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProblemTracker">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="affectedService" Type="varchar" MaxLength="300" />
+    <Property Name="leadTicket" Type="varchar" MaxLength="50" />
+    <Property Name="startDateTime" Type="datetime" />
+    <Property Name="endDateTime" Type="datetime" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="ProblemCondition_id" Type="int" Nullable="false" />
+    <Property Name="plannedEndDateTime" Type="datetime" />
+    <Property Name="reportedBy" Type="varchar" MaxLength="255" />
+    <Property Name="plannedStartDateTime" Type="datetime" />
+    <Property Name="plannedImpact_id" Type="int" />
+    <Property Name="actualImpact_id" Type="int" />
+    <Property Name="ProblemStatus_id" Type="int" Nullable="false" />
+    <Property Name="Original_id" Type="int" />
+  </EntityType>
+  <EntityType Name="ProbTrackLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateTime" Type="datetime" Nullable="false" />
+    <Property Name="NTID_id" Type="int" Nullable="false" />
+    <Property Name="Problemtracker_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SDDocLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateTime" Type="datetime" Nullable="false" />
+    <Property Name="NTID_id" Type="int" Nullable="false" />
+    <Property Name="SDDocumentation_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SDDocumentation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="alias" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DocumentLink_id" Type="int" />
+    <Property Name="PasswordHyperlink_id" Type="int" />
+    <Property Name="Status_id" Type="int" Nullable="false" />
+    <Property Name="LearningCenterCategory_id" Type="int" Nullable="false" />
+    <Property Name="Original_id" Type="int" />
+    <Property Name="documentTitle" Type="varchar" MaxLength="255" />
+    <Property Name="passwordTitle" Type="varchar" MaxLength="255" />
+    <Property Name="learningCenterOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UsageLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="searchDateTime" Type="datetime" Nullable="false" />
+    <Property Name="NTID_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DocumentLinks_DocumentAccess">
+    <End Role="DocumentAccess" Type="Self.DocumentAccess" Multiplicity="1" />
+    <End Role="DocumentLinks" Type="Self.DocumentLinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentAccess">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DocumentLinks">
+        <PropertyRef Name="Access_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoGathering_DocumentLinks">
+    <End Role="DocumentLinks" Type="Self.DocumentLinks" Multiplicity="0..1" />
+    <End Role="InfoGathering" Type="Self.InfoGathering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentLinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoGathering">
+        <PropertyRef Name="infoGathLink_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoGathering_DocumentLinks1">
+    <End Role="DocumentLinks" Type="Self.DocumentLinks" Multiplicity="0..1" />
+    <End Role="InfoGathering" Type="Self.InfoGathering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentLinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoGathering">
+        <PropertyRef Name="PasswordHyperlink_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoGathering_InfoGathering">
+    <End Role="InfoGathering" Type="Self.InfoGathering" Multiplicity="0..1" />
+    <End Role="InfoGathering1" Type="Self.InfoGathering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoGathering">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="InfoGathering1">
+        <PropertyRef Name="Original_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoGathering_Status">
+    <End Role="DocumentStatus" Type="Self.DocumentStatus" Multiplicity="1" />
+    <End Role="InfoGathering" Type="Self.InfoGathering" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoGathering">
+        <PropertyRef Name="Status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoGathLog_InfoGathering">
+    <End Role="InfoGathering" Type="Self.InfoGathering" Multiplicity="0..1" />
+    <End Role="InfoGathLog" Type="Self.InfoGathLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoGathering">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="InfoGathLog">
+        <PropertyRef Name="InfoGathering_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoGathLog_networkLogin">
+    <End Role="NetworkLogin" Type="Self.NetworkLogin" Multiplicity="1" />
+    <End Role="InfoGathLog" Type="Self.InfoGathLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NetworkLogin">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="InfoGathLog">
+        <PropertyRef Name="NTID_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProblemTracker_ProblemCondition">
+    <End Role="ProblemCondition" Type="Self.ProblemCondition" Multiplicity="1" />
+    <End Role="ProblemTracker" Type="Self.ProblemTracker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProblemCondition">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProblemTracker">
+        <PropertyRef Name="ProblemCondition_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProblemTracker_ProblemImpact">
+    <End Role="ProblemImpact" Type="Self.ProblemImpact" Multiplicity="0..1" />
+    <End Role="ProblemTracker" Type="Self.ProblemTracker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProblemImpact">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProblemTracker">
+        <PropertyRef Name="actualImpact_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProblemTracker_ProblemStatus">
+    <End Role="ProblemStatus" Type="Self.ProblemStatus" Multiplicity="1" />
+    <End Role="ProblemTracker" Type="Self.ProblemTracker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProblemStatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProblemTracker">
+        <PropertyRef Name="ProblemStatus_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProblemTracker_ProblemTracker">
+    <End Role="ProblemTracker" Type="Self.ProblemTracker" Multiplicity="0..1" />
+    <End Role="ProblemTracker1" Type="Self.ProblemTracker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProblemTracker">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProblemTracker1">
+        <PropertyRef Name="Original_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProbTrackLog_networkLogin">
+    <End Role="NetworkLogin" Type="Self.NetworkLogin" Multiplicity="1" />
+    <End Role="ProbTrackLog" Type="Self.ProbTrackLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NetworkLogin">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProbTrackLog">
+        <PropertyRef Name="NTID_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProbTrackLog_ProblemTracker">
+    <End Role="ProblemTracker" Type="Self.ProblemTracker" Multiplicity="1" />
+    <End Role="ProbTrackLog" Type="Self.ProbTrackLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProblemTracker">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ProbTrackLog">
+        <PropertyRef Name="Problemtracker_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SDDocLog_networkLogin">
+    <End Role="NetworkLogin" Type="Self.NetworkLogin" Multiplicity="1" />
+    <End Role="SDDocLog" Type="Self.SDDocLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NetworkLogin">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SDDocLog">
+        <PropertyRef Name="NTID_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SDDocLog_SDDocumentation">
+    <End Role="SDDocumentation" Type="Self.SDDocumentation" Multiplicity="1" />
+    <End Role="SDDocLog" Type="Self.SDDocLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SDDocumentation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SDDocLog">
+        <PropertyRef Name="SDDocumentation_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SDDocumentation_DocumentLinks">
+    <End Role="DocumentLinks" Type="Self.DocumentLinks" Multiplicity="0..1" />
+    <End Role="SDDocumentation" Type="Self.SDDocumentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentLinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SDDocumentation">
+        <PropertyRef Name="DocumentLink_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SDDocumentation_DocumentLinks1">
+    <End Role="DocumentLinks" Type="Self.DocumentLinks" Multiplicity="0..1" />
+    <End Role="SDDocumentation" Type="Self.SDDocumentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentLinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SDDocumentation">
+        <PropertyRef Name="PasswordHyperlink_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SDDocumentation_LearningCenterCategory">
+    <End Role="LearningCenterCategory" Type="Self.LearningCenterCategory" Multiplicity="1" />
+    <End Role="SDDocumentation" Type="Self.SDDocumentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LearningCenterCategory">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SDDocumentation">
+        <PropertyRef Name="LearningCenterCategory_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SDDocumentation_SDDocumentation">
+    <End Role="SDDocumentation" Type="Self.SDDocumentation" Multiplicity="0..1" />
+    <End Role="SDDocumentation1" Type="Self.SDDocumentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SDDocumentation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SDDocumentation1">
+        <PropertyRef Name="Original_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SDDocumentation_Status">
+    <End Role="DocumentStatus" Type="Self.DocumentStatus" Multiplicity="1" />
+    <End Role="SDDocumentation" Type="Self.SDDocumentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SDDocumentation">
+        <PropertyRef Name="Status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsageLog_networkLogin">
+    <End Role="NetworkLogin" Type="Self.NetworkLogin" Multiplicity="1" />
+    <End Role="UsageLog" Type="Self.UsageLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NetworkLogin">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UsageLog">
+        <PropertyRef Name="NTID_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="HelpDesk_ModelStoreContainer">
+    <EntitySet Name="Abbreviations" EntityType="Self.Abbreviations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentAccess" EntityType="Self.DocumentAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentLinks" EntityType="Self.DocumentLinks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentStatus" EntityType="Self.DocumentStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailTemplates" EntityType="Self.EmailTemplates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HelpfulHyperlink" EntityType="Self.HelpfulHyperlink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InfoGathering" EntityType="Self.InfoGathering" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InfoGathLog" EntityType="Self.InfoGathLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LearningCenterCategory" EntityType="Self.LearningCenterCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NetworkLogin" EntityType="Self.NetworkLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhoneNumbers" EntityType="Self.PhoneNumbers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Printers" EntityType="Self.Printers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProblemCondition" EntityType="Self.ProblemCondition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProblemImpact" EntityType="Self.ProblemImpact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProblemStatus" EntityType="Self.ProblemStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProblemTracker" EntityType="Self.ProblemTracker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProbTrackLog" EntityType="Self.ProbTrackLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SDDocLog" EntityType="Self.SDDocLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SDDocumentation" EntityType="Self.SDDocumentation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsageLog" EntityType="Self.UsageLog" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DocumentLinks_DocumentAccess" Association="Self.FK_DocumentLinks_DocumentAccess">
+      <End Role="DocumentAccess" EntitySet="DocumentAccess" />
+      <End Role="DocumentLinks" EntitySet="DocumentLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoGathering_DocumentLinks" Association="Self.FK_InfoGathering_DocumentLinks">
+      <End Role="DocumentLinks" EntitySet="DocumentLinks" />
+      <End Role="InfoGathering" EntitySet="InfoGathering" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoGathering_DocumentLinks1" Association="Self.FK_InfoGathering_DocumentLinks1">
+      <End Role="DocumentLinks" EntitySet="DocumentLinks" />
+      <End Role="InfoGathering" EntitySet="InfoGathering" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoGathering_InfoGathering" Association="Self.FK_InfoGathering_InfoGathering">
+      <End Role="InfoGathering" EntitySet="InfoGathering" />
+      <End Role="InfoGathering1" EntitySet="InfoGathering" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoGathering_Status" Association="Self.FK_InfoGathering_Status">
+      <End Role="DocumentStatus" EntitySet="DocumentStatus" />
+      <End Role="InfoGathering" EntitySet="InfoGathering" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoGathLog_InfoGathering" Association="Self.FK_InfoGathLog_InfoGathering">
+      <End Role="InfoGathering" EntitySet="InfoGathering" />
+      <End Role="InfoGathLog" EntitySet="InfoGathLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoGathLog_networkLogin" Association="Self.FK_InfoGathLog_networkLogin">
+      <End Role="NetworkLogin" EntitySet="NetworkLogin" />
+      <End Role="InfoGathLog" EntitySet="InfoGathLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProblemTracker_ProblemCondition" Association="Self.FK_ProblemTracker_ProblemCondition">
+      <End Role="ProblemCondition" EntitySet="ProblemCondition" />
+      <End Role="ProblemTracker" EntitySet="ProblemTracker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProblemTracker_ProblemImpact" Association="Self.FK_ProblemTracker_ProblemImpact">
+      <End Role="ProblemImpact" EntitySet="ProblemImpact" />
+      <End Role="ProblemTracker" EntitySet="ProblemTracker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProblemTracker_ProblemStatus" Association="Self.FK_ProblemTracker_ProblemStatus">
+      <End Role="ProblemStatus" EntitySet="ProblemStatus" />
+      <End Role="ProblemTracker" EntitySet="ProblemTracker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProblemTracker_ProblemTracker" Association="Self.FK_ProblemTracker_ProblemTracker">
+      <End Role="ProblemTracker" EntitySet="ProblemTracker" />
+      <End Role="ProblemTracker1" EntitySet="ProblemTracker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProbTrackLog_networkLogin" Association="Self.FK_ProbTrackLog_networkLogin">
+      <End Role="NetworkLogin" EntitySet="NetworkLogin" />
+      <End Role="ProbTrackLog" EntitySet="ProbTrackLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProbTrackLog_ProblemTracker" Association="Self.FK_ProbTrackLog_ProblemTracker">
+      <End Role="ProblemTracker" EntitySet="ProblemTracker" />
+      <End Role="ProbTrackLog" EntitySet="ProbTrackLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SDDocLog_networkLogin" Association="Self.FK_SDDocLog_networkLogin">
+      <End Role="NetworkLogin" EntitySet="NetworkLogin" />
+      <End Role="SDDocLog" EntitySet="SDDocLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SDDocLog_SDDocumentation" Association="Self.FK_SDDocLog_SDDocumentation">
+      <End Role="SDDocumentation" EntitySet="SDDocumentation" />
+      <End Role="SDDocLog" EntitySet="SDDocLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SDDocumentation_DocumentLinks" Association="Self.FK_SDDocumentation_DocumentLinks">
+      <End Role="DocumentLinks" EntitySet="DocumentLinks" />
+      <End Role="SDDocumentation" EntitySet="SDDocumentation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SDDocumentation_DocumentLinks1" Association="Self.FK_SDDocumentation_DocumentLinks1">
+      <End Role="DocumentLinks" EntitySet="DocumentLinks" />
+      <End Role="SDDocumentation" EntitySet="SDDocumentation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SDDocumentation_LearningCenterCategory" Association="Self.FK_SDDocumentation_LearningCenterCategory">
+      <End Role="LearningCenterCategory" EntitySet="LearningCenterCategory" />
+      <End Role="SDDocumentation" EntitySet="SDDocumentation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SDDocumentation_SDDocumentation" Association="Self.FK_SDDocumentation_SDDocumentation">
+      <End Role="SDDocumentation" EntitySet="SDDocumentation" />
+      <End Role="SDDocumentation1" EntitySet="SDDocumentation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SDDocumentation_Status" Association="Self.FK_SDDocumentation_Status">
+      <End Role="DocumentStatus" EntitySet="DocumentStatus" />
+      <End Role="SDDocumentation" EntitySet="SDDocumentation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsageLog_networkLogin" Association="Self.FK_UsageLog_networkLogin">
+      <End Role="NetworkLogin" EntitySet="NetworkLogin" />
+      <End Role="UsageLog" EntitySet="UsageLog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
